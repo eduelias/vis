@@ -1,6 +1,6 @@
 {
     "name": "vis-dev",
-    "version": "4.38.2-DEV",
+    "version": "4.45.9-DEV",
     "description": "A dynamic, browser-based visualization library.",
     "homepage": "http://visjs.org/",
     "license": "(Apache-2.0 OR MIT)",
