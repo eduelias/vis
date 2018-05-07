@@ -1,6 +1,6 @@
 {
     "name": "vis-dev",
-    "version": "4.45.9-DEV",
+    "version": "4.50.9-DEV",
     "description": "A dynamic, browser-based visualization library.",
     "homepage": "http://visjs.org/",
     "license": "(Apache-2.0 OR MIT)",
@@ -55,7 +55,8 @@
         "babel-runtime": "^6.23.0",
         "babelify": "^7.3.0",
         "clean-css": "^4.1.7",
-        "eslint": "^4.3.0",
+        "eslint": "^4.19.1",
+        "eslint-config-google": "^0.9.1",
         "gulp": "^3.9.1",
         "gulp-clean-css": "^3.7.0",
         "gulp-concat": "^2.6.1",
