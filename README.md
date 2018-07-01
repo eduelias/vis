@@ -215,9 +215,15 @@ exports.Timeline = require('./lib/timeline/Timeline');
 
 Then create a custom bundle using browserify, like:
 
-    $ browserify custom.js -t [ babelify --presets [es2015] ] -o dist/vis-custom.js -s vis
+    $ browserify custom.js -t [ babelify --presets [env] ] -o dist/vis-custom.js -s vis
 
+<<<<<<< HEAD
 This will generate a custom bundle _vis-custom.js_, which exposes the namespace `vis` containing only `DataSet` and `Timeline`. The generated bundle can be minified using uglifyjs:
+=======
+This will generate a custom bundle *vis-custom.js*, which exposes the namespace `vis` containing only `DataSet` and `Timeline`. You can pass additional options to babelify and browserify as needed (e.g. to customise the browsers that are supported).
+
+The generated bundle can be minified using uglifyjs:
+>>>>>>> 8441fedecd761a6d3e1d4e5f745e0a4e4452785c
 
     $ uglifyjs dist/vis-custom.js -o dist/vis-custom.min.js
 
@@ -240,7 +246,7 @@ The custom bundle can now be loaded like:
 
 The default bundle `vis.js` is standalone and includes external dependencies such as _hammer.js_ and _moment.js_. When these libraries are already loaded by the application, vis.js does not need to include these dependencies itself too. To build a custom bundle of vis.js excluding _moment.js_ and _hammer.js_, run browserify in the root of the project:
 
-    $ browserify index.js -t [ babelify --presets [es2015] ] -o dist/vis-custom.js -s vis -x moment -x hammerjs
+    $ browserify index.js -t [ babelify --presets [env] ] -o dist/vis-custom.js -s vis -x moment -x hammerjs
 
 This will generate a custom bundle _vis-custom.js_, which exposes the namespace `vis`, and has _moment.js_ and _hammer.js_ excluded. The generated bundle can be minified with uglifyjs:
 
@@ -336,7 +342,7 @@ module: {
       loader: 'babel-loader',
       query: {
         cacheDirectory: true,
-        presets: [ "babel-preset-es2015" ].map(require.resolve),
+        presets: [ "babel-preset-env" ].map(require.resolve),
         plugins: [
           "transform-es3-property-literals", // #2452
           "transform-es3-member-expression-literals", // #2566
@@ -392,7 +398,7 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 ## License
 
-Copyright (C) 2010-2017 Almende B.V. and Contributors
+Copyright (C) 2010-2018 Almende B.V. and Contributors
 
 Vis.js is dual licensed under both
 
