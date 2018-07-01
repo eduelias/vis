@@ -1,6 +1,6 @@
 # vis.js
 
-[![Backers on Open Collective](https://opencollective.com/vis/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/vis/sponsors/badge.svg)](#sponsors) [![Join the chat at https://gitter.im/vis-js/Lobby](https://badges.gitter.im/vis-js/Lobby.svg)](https://gitter.im/vis-js/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/vis-js/Lobby](https://badges.gitter.im/vis-js/Lobby.svg)](https://gitter.im/vis-js/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 <a href="https://github.com/almende/vis/blob/develop/misc/we_need_help.md">
   <img align="right" src="https://raw.githubusercontent.com/almende/vis/master/misc/we_need_help.png">
@@ -34,11 +34,17 @@ The vis.js library was initially developed by [Almende B.V](http://almende.com).
 [![GitHub stars](https://img.shields.io/github/stars/almende/vis.svg)](https://github.com/almende/vis/stargazers)
 
 [![GitHub issues](https://img.shields.io/github/issues/almende/vis.svg)](https://github.com/almende/vis/issues)
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/almende/vis.svg)](http://isitmaintained.com/project/almende/vis "Percentage of issues still open")
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/almende/vis.svg)](http://isitmaintained.com/project/almende/vis "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/almende/vis.svg)](http://isitmaintained.com/project/almende/vis 'Percentage of issues still open')
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/almende/vis.svg)](http://isitmaintained.com/project/almende/vis 'Average time to resolve an issue')
 [![Pending Pull-Requests](http://githubbadges.herokuapp.com/almende/vis/pulls.svg)](https://github.com/almende/vis/pulls)
 
+<<<<<<< HEAD
 [![Code Climate](https://codeclimate.com/github/almende/vis/badges/gpa.svg)](https://codeclimate.com/github/almende/vis)
+=======
+[![Test Coverage](https://codeclimate.com/github/almende/vis/badges/coverage.svg)](https://codeclimate.com/github/almende/vis/coverage)
+[![Code Climate](https://codeclimate.com/github/almende/vis/badges/gpa.svg)](https://codeclimate.com/github/almende/vis)
+
+> > > > > > > master
 
 ## Install
 
@@ -79,14 +85,13 @@ or load vis.js using require.js. Note that vis.css must be loaded too.
 ```js
 require.config({
   paths: {
-    vis: 'path/to/vis/dist',
+    vis: 'path/to/vis/dist'
   }
 });
-require(['vis'], function (math) {
+require(['vis'], function(math) {
   // ... load a visualization
 });
 ```
-
 
 A timeline can be instantiated as:
 
@@ -97,7 +102,6 @@ var timeline = new vis.Timeline(container, data, options);
 Where `container` is an HTML element, `data` is an Array with data or a DataSet,
 and `options` is an optional object with configuration options for the
 component.
-
 
 ## Example
 
@@ -168,17 +172,17 @@ slow, so when only the non-minified library is needed, one can use the
 
 ## Custom builds
 
-The folder `dist` contains bundled versions of vis.js for direct use in the browser. These bundles contain all the visualizations and include external dependencies such as *hammer.js* and *moment.js*.
+The folder `dist` contains bundled versions of vis.js for direct use in the browser. These bundles contain all the visualizations and include external dependencies such as _hammer.js_ and _moment.js_.
 
 The source code of vis.js consists of commonjs modules, which makes it possible to create custom bundles using tools like [Browserify](http://browserify.org/) or [Webpack](http://webpack.github.io/). This can be bundling just one visualization like the Timeline, or bundling vis.js as part of your own browserified web application.
 
-*Note that hammer.js version 2 is required as of v4.*
+_Note that hammer.js version 2 is required as of v4._
 
 ### Prerequisites
 
 Before you can do a build:
 
-- Install *node.js* and *npm* on your system: https://nodejs.org/
+- Install _node.js_ and _npm_ on your system: https://nodejs.org/
 - Install the following modules using npm: `browserify`, `babelify`, and `uglify-js`:
 
   ```
@@ -213,7 +217,7 @@ Then create a custom bundle using browserify, like:
 
     $ browserify custom.js -t [ babelify --presets [es2015] ] -o dist/vis-custom.js -s vis
 
-This will generate a custom bundle *vis-custom.js*, which exposes the namespace `vis` containing only `DataSet` and `Timeline`. The generated bundle can be minified using uglifyjs:
+This will generate a custom bundle _vis-custom.js_, which exposes the namespace `vis` containing only `DataSet` and `Timeline`. The generated bundle can be minified using uglifyjs:
 
     $ uglifyjs dist/vis-custom.js -o dist/vis-custom.min.js
 
@@ -234,11 +238,11 @@ The custom bundle can now be loaded like:
 
 #### Example 2: Exclude external libraries
 
-The default bundle `vis.js` is standalone and includes external dependencies such as *hammer.js* and *moment.js*. When these libraries are already loaded by the application, vis.js does not need to include these dependencies itself too. To build a custom bundle of vis.js excluding *moment.js* and *hammer.js*, run browserify in the root of the project:
+The default bundle `vis.js` is standalone and includes external dependencies such as _hammer.js_ and _moment.js_. When these libraries are already loaded by the application, vis.js does not need to include these dependencies itself too. To build a custom bundle of vis.js excluding _moment.js_ and _hammer.js_, run browserify in the root of the project:
 
     $ browserify index.js -t [ babelify --presets [es2015] ] -o dist/vis-custom.js -s vis -x moment -x hammerjs
 
-This will generate a custom bundle *vis-custom.js*, which exposes the namespace `vis`, and has *moment.js* and *hammer.js* excluded. The generated bundle can be minified with uglifyjs:
+This will generate a custom bundle _vis-custom.js_, which exposes the namespace `vis`, and has _moment.js_ and _hammer.js_ excluded. The generated bundle can be minified with uglifyjs:
 
     $ uglifyjs dist/vis-custom.js -o dist/vis-custom.min.js
 
@@ -273,12 +277,17 @@ var Timeline = require('vis/lib/timeline/Timeline');
 
 var container = document.getElementById('visualization');
 var data = new DataSet([
-  {id: 1, content: 'item 1', start: moment('2013-04-20')},
-  {id: 2, content: 'item 2', start: moment('2013-04-14')},
-  {id: 3, content: 'item 3', start: moment('2013-04-18')},
-  {id: 4, content: 'item 4', start: moment('2013-04-16'), end: moment('2013-04-19')},
-  {id: 5, content: 'item 5', start: moment('2013-04-25')},
-  {id: 6, content: 'item 6', start: moment('2013-04-27')}
+  { id: 1, content: 'item 1', start: moment('2013-04-20') },
+  { id: 2, content: 'item 2', start: moment('2013-04-14') },
+  { id: 3, content: 'item 3', start: moment('2013-04-18') },
+  {
+    id: 4,
+    content: 'item 4',
+    start: moment('2013-04-16'),
+    end: moment('2013-04-19')
+  },
+  { id: 5, content: 'item 5', start: moment('2013-04-25') },
+  { id: 6, content: 'item 6', start: moment('2013-04-27') }
 ]);
 var options = {};
 var timeline = new Timeline(container, data, options);
@@ -387,12 +396,12 @@ Copyright (C) 2010-2017 Almende B.V. and Contributors
 
 Vis.js is dual licensed under both
 
-  * The Apache 2.0 License
-    http://www.apache.org/licenses/LICENSE-2.0
+- The Apache 2.0 License
+  http://www.apache.org/licenses/LICENSE-2.0
 
 and
 
-  * The MIT License
-    http://opensource.org/licenses/MIT
+- The MIT License
+  http://opensource.org/licenses/MIT
 
 Vis.js may be distributed under either license.
